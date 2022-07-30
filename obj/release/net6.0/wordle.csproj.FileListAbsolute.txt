@@ -1,0 +1,15 @@
+G:\_vscode\cs\wordle\bin\release\net6.0\wordle.exe
+G:\_vscode\cs\wordle\bin\release\net6.0\wordle.deps.json
+G:\_vscode\cs\wordle\bin\release\net6.0\wordle.runtimeconfig.json
+G:\_vscode\cs\wordle\bin\release\net6.0\wordle.dll
+G:\_vscode\cs\wordle\bin\release\net6.0\wordle.pdb
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.csproj.AssemblyReference.cache
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.GeneratedMSBuildEditorConfig.editorconfig
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.AssemblyInfoInputs.cache
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.AssemblyInfo.cs
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.csproj.CoreCompileInputs.cache
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.dll
+G:\_vscode\cs\wordle\obj\release\net6.0\refint\wordle.dll
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.pdb
+G:\_vscode\cs\wordle\obj\release\net6.0\wordle.genruntimeconfig.cache
+G:\_vscode\cs\wordle\obj\release\net6.0\ref\wordle.dll
