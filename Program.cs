@@ -21,11 +21,10 @@
         Setup(out wordToGuess, out guessesRemain, out words);
 
         bool run = true;
+        ClearConsoleAndShowWords(guessesRemain, previousTries, wordToGuess, usedCharacters);
         while (run)
-        {
-            ClearConsoleAndShowWords(guessesRemain, previousTries, wordToGuess, usedCharacters);
-            
-            guess = GetInput(previousTries, words, usedCharacters, guessesRemain, wordToGuess);
+        {   
+            guess = GetInputAndShowWords(previousTries, words, usedCharacters, guessesRemain, wordToGuess);
             previousTries.Add(guess);
             guessesRemain--;
 
@@ -70,8 +69,6 @@
                                                  string _wordToGuess, List<char> _usedCharacters)
     {
         Console.Clear();
-
-        Console.WriteLine("Guesses remain: " + _guessesRemain);
         for (int i = 0; i < MaxGuesses; i++)
         {
             if (i <  6 - _guessesRemain)
@@ -108,7 +105,7 @@
         Console.WriteLine();
     }
 
-    private static string GetInput(List<string> _previousTries, List<string> _allWords, List<char> _usedCharacters, int _guessesRemain, string _wordToGuess)
+    private static string GetInputAndShowWords(List<string> _previousTries, List<string> _allWords, List<char> _usedCharacters, int _guessesRemain, string _wordToGuess)
     {
         ClearConsoleAndShowWords(_guessesRemain, _previousTries, _wordToGuess, _usedCharacters);
         Console.Write("Your guess: ");
@@ -122,7 +119,7 @@
                 Console.WriteLine("Wrong character(-s) passed!");
                 Console.WriteLine("press any key to continue...");
                 Console.ReadKey();
-                input = GetInput(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
+                input = GetInputAndShowWords(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
             }
         }
 
@@ -131,7 +128,7 @@
             Console.WriteLine("Write 5 characters long words only!");
             Console.WriteLine("press any key to continue...");
             Console.ReadKey();
-            input = GetInput(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
+            input = GetInputAndShowWords(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
         }
         
         if (_previousTries.Any(prevTry => prevTry.ToUpper() == input))
@@ -139,7 +136,7 @@
             Console.WriteLine("You tried this word already.");
             Console.WriteLine("press any key to continue...");
             Console.ReadKey();
-            input = GetInput(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
+            input = GetInputAndShowWords(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
         }
 
         if (_allWords.Any(word => word.ToUpper() == input))
@@ -149,7 +146,7 @@
             Console.WriteLine($"Word {input} is not valid");
             Console.WriteLine("press any key to continue...");
             Console.ReadKey();
-            input = GetInput(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
+            input = GetInputAndShowWords(_previousTries, _allWords, _usedCharacters, _guessesRemain, _wordToGuess);
         }
 
         foreach (char ch in input)
